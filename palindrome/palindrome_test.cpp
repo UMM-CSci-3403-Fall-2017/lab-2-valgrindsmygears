@@ -4,18 +4,18 @@
 
 void is_palindrome(char* str) {
   // store the output of palindrome to a pointer so we can free it when we're done.
-  char* result;
-  result = palindrome(str);
-  ASSERT_STREQ(result, "Yes");
-  free(result);
+  char* palindrome_result;
+  palindrome_result = palindrome(str);
+  ASSERT_STREQ(palindrome_result, "Yes");
+  free(palindrome_result);
 }
 
 void not_palindrome(char* str) {
   // store the output of palindrome to a pointer so we can free it when we're done.
-  char* result;
-  result = palindrome(str);
-  ASSERT_STREQ(result, "No");
-  free(result);
+  char* palindrome_result;
+  palindrome_result = palindrome(str);
+  ASSERT_STREQ(palindrome_result, "No");
+  free(palindrome_result);
 }
 
 TEST(Palindrome, HandlesEmptyString) {

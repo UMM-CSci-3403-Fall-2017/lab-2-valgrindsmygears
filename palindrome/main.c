@@ -7,7 +7,7 @@
 int main(int argc, char* argv[]) {
   // Declare an extra pointer, result, to store the value returned by palindrome.
   // This allows us to store the result before the call to printf (from which there is no way of freeing a pointer). 
-  char *line, *result;
+  char *line, *palindrome_result;
   int size;
   
   size = 100;
@@ -24,9 +24,9 @@ int main(int argc, char* argv[]) {
     line[strcspn(line, "\n")] = '\0';
     
     // Store the intermediate value before printf so that we can free it later (and reassign for every loop).
-    result = palindrome(line);
-    printf("Is the string <%s> a palindrome? %s\n", line, result);
-    free(result);
+    palindrome_result = palindrome(line);
+    printf("Is the string <%s> a palindrome? %s\n", line, palindrome_result);
+    free(palindrome_result);
   }
 
   free(line);
