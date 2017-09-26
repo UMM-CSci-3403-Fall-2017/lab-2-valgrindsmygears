@@ -33,6 +33,9 @@ char* palindrome(char* str) {
     ++i;
   }
 
+  // free memory allocated by the subroutine str_reverse 
+  free(rev);
+
   if (result) {
     answer = (char*) calloc(4, sizeof(char));
     answer[0] = 'Y';

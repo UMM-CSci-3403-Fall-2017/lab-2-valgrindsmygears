@@ -3,11 +3,19 @@
 #include "palindrome.h"
 
 void is_palindrome(char* str) {
-  ASSERT_STREQ(palindrome(str), "Yes");
+  // store the output of palindrome to a pointer so we can free it when we're done.
+  char* result;
+  result = palindrome(str);
+  ASSERT_STREQ(result, "Yes");
+  free(result);
 }
 
 void not_palindrome(char* str) {
-  ASSERT_STREQ(palindrome(str), "No");
+  // store the output of palindrome to a pointer so we can free it when we're done.
+  char* result;
+  result = palindrome(str);
+  ASSERT_STREQ(result, "No");
+  free(result);
 }
 
 TEST(Palindrome, HandlesEmptyString) {
