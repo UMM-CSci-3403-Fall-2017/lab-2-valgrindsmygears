@@ -41,6 +41,7 @@ char* disemvowel(char* str) {
   disemvoweled_string = (char*) calloc(new_string_length + 1, sizeof(char));
   j = 0;
   for (i=0; i<old_string_length; ++i) {
+    // Add only non-vowel elements to the new string
     if (strchr(vowels, str[i]) == '\0') {
       disemvoweled_string[j] = str[i];
       ++j;
